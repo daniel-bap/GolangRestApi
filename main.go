@@ -10,7 +10,7 @@ import (
 func main() {
 
 	databaseConnection := database.InitDB()
-
+	defer databaseConnection.Close()
 	fmt.Println(databaseConnection)
 	/*	r := chi.NewRouter()
 		r.Get("/", func(w http.ResponseWriter, r *http.Request) {
